@@ -11,6 +11,23 @@ body {
 }
 
 
+button {
+  border-radius: 10px;
+  background: $dark;
+  color: $white;
+  font-size: 1.5rem;
+  letter-spacing: 2.24px;
+  font-family: "Almoni regular", sans-serif;
+  border: none;
+  padding: 1rem 4rem;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 90%
+  }
+
+}
+
 .title {
   font-family: "Jura", sans-serif;
   font-size: 70px;
@@ -31,4 +48,3 @@ p {
 b {
   font-family: "Almoni bold", sans-serif;
 }
-
