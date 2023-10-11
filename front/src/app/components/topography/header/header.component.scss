@@ -1,31 +1,33 @@
-.top {
-    display: flex;
-    height: 40vh;
-    direction: ltr;
-    width: 100vw;
-    background: #e9eeea;
-    gap: 3rem;
-    align-items: center;
+@import "src/assets/styles/variables.scss";
 
-    img {
-        width: 40%;
-        object-fit: cover;
-        height: 100%;
+.header {
+  display: flex;
+  height: 35vh;
+  direction: ltr;
+  width: 100vw;
+  background: $light;
+  gap: 3rem;
+  align-items: center;
+
+  img {
+    width: 40%;
+    object-fit: cover;
+    height: 100%;
+  }
+
+  .text {
+    padding: 2rem 0;
+    color: $dark;
+    font-family: "Jura", sans-serif;
+
+    h1, h2 {
+      margin: 1rem;
+      font-size: 4rem;
+      font-weight: normal;
     }
 
-    .text {
-        padding: 2rem 0;
-        color: #2a5435;
-
-        h1,
-        h2 {
-            margin: 0;
-            font-size: 60px;
-            font-weight: normal;
-        }
-
-        h2 {
-            font-weight: bold;
-        }
+    h2 {
+      font-weight: bold;
     }
+  }
 }
