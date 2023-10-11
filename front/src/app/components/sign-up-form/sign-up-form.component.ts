@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ApiService } from 'src/app/services/api.service';
 
 @Component({
   selector: 'app-sign-up-form',
@@ -9,7 +10,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class SignUpFormComponent {
   userForm: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) {
+  constructor(private formBuilder: FormBuilder, private api: ApiService) {
     this.userForm = this.formBuilder.group({
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
@@ -24,8 +25,7 @@ export class SignUpFormComponent {
 
   onSubmit() {
     if (this.userForm.valid) {
-      // Handle form submission here
-      console.log(this.userForm.value);
+      this.api.add(this.userForm.value);
     }
   }
 }
