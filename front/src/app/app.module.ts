@@ -1,6 +1,8 @@
+import {NgOptimizedImage} from '@angular/common';
 import { NgModule } from '@angular/core';
 import {AngularFireModule} from '@angular/fire/compat';
 import {AngularFirestoreModule} from '@angular/fire/compat/firestore';
+import {MatIconModule} from '@angular/material/icon';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -38,6 +40,8 @@ const firebaseConfig = {
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFirestoreModule,
     BrowserAnimationsModule,
+    NgOptimizedImage,
+    MatIconModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

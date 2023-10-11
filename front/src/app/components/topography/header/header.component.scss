@@ -1,0 +1,33 @@
+@import "src/assets/styles/variables.scss";
+
+.header {
+  display: flex;
+  height: 35vh;
+  direction: ltr;
+  width: 100vw;
+  background: $light;
+  gap: 3rem;
+  align-items: center;
+
+  img {
+    width: 40%;
+    object-fit: cover;
+    height: 100%;
+  }
+
+  .text {
+    padding: 2rem 0;
+    color: $dark;
+    font-family: "Jura", sans-serif;
+
+    h1, h2 {
+      margin: 1rem;
+      font-size: 70px;
+      font-weight: normal;
+    }
+
+    h2 {
+      font-weight: bold;
+    }
+  }
+}
