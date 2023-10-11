@@ -1,0 +1,81 @@
+@use '@angular/material' as mat;
+@import "variables.scss";
+@include mat.core();
+/* For use in src/lib/core/theming/_palette.scss */
+$primary: (
+        50: #1b472c,   // Darkest shade
+        100: #1f5134,
+        200: #235a3c,
+        300: #276344,
+        400: #2b6d4d,
+        500: #2f7755,  // Regular shade
+        600: #33805d,
+        700: #378965,
+        800: #3b926e,
+        900: #3f9c76,
+        A100: #57ac89,
+        A200: #6ebc9e,
+        A400: #85ccb3,
+        A700: #9bdcc8,  // Lightest shade
+        contrast: (
+                50: #ffffff,  // Contrast for darkest shade
+                100: #ffffff,
+                200: #ffffff,
+                300: #ffffff,
+                400: #ffffff,
+                500: #ffffff,  // Contrast for regular shade
+                600: #ffffff,
+                700: #ffffff,
+                800: #ffffff,
+                900: #ffffff,  // Contrast for lightest shade
+                A100: #000000,  // Contrast for A100 shade
+                A200: #000000,
+                A400: #000000,
+                A700: #000000,
+        ),
+);
+$accent: (
+        50: #e9eeea,  // New accent color
+        100: #e9eeea, // You can adjust other shades as needed
+        200: #e9eeea,
+        300: #e9eeea,
+        400: #e9eeea,
+        500: #e9eeea,
+        600: #e9eeea,
+        700: #e9eeea,
+        800: #e9eeea,
+        900: #e9eeea,
+        A100: #e9eeea,
+        A200: #e9eeea,
+        A400: #e9eeea,
+        A700: #e9eeea,
+        contrast: (
+                50: #000000,
+                100: #000000,
+                200: #000000,
+                300: #000000,
+                400: #000000,
+                500: #000000,
+                600: #000000,
+                700: #000000,
+                800: #000000,
+                900: #000000,
+                A100: #000000,
+                A200: #000000,
+                A400: #000000,
+                A700: #000000,
+        ),
+);
+
+$app-primary: mat.define-palette($primary);
+$app-accent: mat.define-palette($accent);
+
+$app-theme: mat.define-light-theme(
+                (
+                        color: (
+                                primary: $app-primary,
+                                accent: $app-accent,
+                        ),
+                )
+);
+@include mat.all-component-themes($app-theme);
