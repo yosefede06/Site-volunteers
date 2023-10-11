@@ -1,1 +1,23 @@
 /* You can add global styles to this file, and also import other style files */
+
+body {
+  font-family: "Almoni regular", sans-serif;
+  direction: rtl;
+  margin: 0;
+  color: #2a5435;
+}
+
+@font-face {
+  font-family: "Almoni bold";
+  src: url("~src/assets/fonts/almoni-bold-aaa.otf");
+}
+
+@font-face {
+  font-family: "Jura";
+  src: url("~src/assets/fonts/Jura-VariableFont_wght.ttf");
+}
+
+@font-face {
+  font-family: "Almoni regular";
+  src: url("~src/assets/fonts/almoni-regular-aaa.otf");
+}

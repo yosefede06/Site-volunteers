@@ -5,11 +5,11 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './components/home/home.component';
 import { HeaderComponent } from './components/topography/header/header.component';
 import { FooterComponent } from './components/topography/footer/footer.component';
 import { SidebarComponent } from './components/topography/sidebar/sidebar.component';
 import { LoaderComponent } from './components/topography/loader/loader.component';
+import { LandingPageComponent } from './components/landing-page/landing-page.component';
 
 const firebaseConfig = {
   apiKey: "AIzaSyCy9gohxz_giHiIKSsrqrSXcrr9xxH1blk",
@@ -24,7 +24,8 @@ const firebaseConfig = {
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent,
+    LandingPageComponent,
+    AppComponent,
     HeaderComponent,
     FooterComponent,
     SidebarComponent,
