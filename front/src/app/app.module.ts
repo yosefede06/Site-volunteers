@@ -10,6 +10,7 @@ import { FooterComponent } from './components/topography/footer/footer.component
 import { SidebarComponent } from './components/topography/sidebar/sidebar.component';
 import { LoaderComponent } from './components/topography/loader/loader.component';
 import { LandingPageComponent } from './components/landing-page/landing-page.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 const firebaseConfig = {
   apiKey: "AIzaSyCy9gohxz_giHiIKSsrqrSXcrr9xxH1blk",
@@ -36,6 +37,7 @@ const firebaseConfig = {
     AppRoutingModule,
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFirestoreModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
