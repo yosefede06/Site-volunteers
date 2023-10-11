@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import {MatIconModule} from '@angular/material/icon';
+import {MatToolbarModule} from '@angular/material/toolbar';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -21,6 +22,8 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
 import {MatTabsModule} from '@angular/material/tabs';
+import { SuggestionsFormComponent } from './components/suggestions-form/suggestions-form.component';
+
 
 const firebaseConfig = {
   apiKey: "AIzaSyCy9gohxz_giHiIKSsrqrSXcrr9xxH1blk",
@@ -41,7 +44,8 @@ const firebaseConfig = {
     FooterComponent,
     SidebarComponent,
     LoaderComponent,
-    SignUpFormComponent
+    SignUpFormComponent,
+    SuggestionsFormComponent,
   ],
   imports: [
     BrowserModule,
@@ -62,6 +66,7 @@ const firebaseConfig = {
     NgOptimizedImage,
     MatIconModule,
     MatButtonModule,
+    MatToolbarModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

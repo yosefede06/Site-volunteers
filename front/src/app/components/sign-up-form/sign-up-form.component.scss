@@ -1,12 +1,27 @@
+@import "src/assets/styles/variables.scss";
+
+
 mat-form-field {
-    // padding-left: 88px;
-    // padding-top: 15px;
     border: none;
     width: 100%;
     padding: 5px;
 }
 
-::ng-deep .mat-mdc-text-field-wrapper {
-    background-color: #e9eeea !important;
-    border: none !important;
+form {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+button {
+    padding: .5rem 5rem;
+    width: fit-content;
+    align-self: flex-end;
+}
+
+mat-toolbar {
+    margin-top: 1rem;
+    border-bottom: 1px solid $dark;
+    letter-spacing: 2.24px;
+    padding: 2rem;
 }

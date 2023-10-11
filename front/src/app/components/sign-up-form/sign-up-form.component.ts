@@ -6,8 +6,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   templateUrl: './sign-up-form.component.html',
   styleUrls: ['./sign-up-form.component.scss']
 })
-export class SignUpFormComponent {
-  userForm: FormGroup;
+export class SignUpFormComponent {  userForm: FormGroup;
 
   constructor(private formBuilder: FormBuilder) {
     this.userForm = this.formBuilder.group({
@@ -28,4 +27,5 @@ export class SignUpFormComponent {
       console.log(this.userForm.value);
     }
   }
+
 }
