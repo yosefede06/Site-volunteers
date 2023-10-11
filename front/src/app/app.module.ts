@@ -22,6 +22,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
 import {MatTabsModule} from '@angular/material/tabs';
 import { SuggestionsFormComponent } from './components/suggestions-form/suggestions-form.component';
+import { FormComponent } from './components/form/form.component';
 
 
 const firebaseConfig = {
@@ -43,6 +44,7 @@ const firebaseConfig = {
     LoaderComponent,
     SignUpFormComponent,
     SuggestionsFormComponent,
+    FormComponent,
   ],
   imports: [
     BrowserModule,

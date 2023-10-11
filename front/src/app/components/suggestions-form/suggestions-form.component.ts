@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {ApiService} from '../../services/api.service';
+import {FormField} from '../form/form.component';
 
 @Component({
   selector: 'app-suggestions-form',
@@ -7,21 +9,18 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
   styleUrls: ['./suggestions-form.component.scss']
 })
 export class SuggestionsFormComponent {
-  userForm: FormGroup;
+  formFields: FormField[] = [
+    { type: 'input', controlName: 'firstName', label: 'שם פרטי', required: true },
+    { type: 'input', controlName: 'lastName', label: 'שם משפחה', required: true },
+    { type: 'input', controlName: 'cellPhone', label: 'טלפון', required: true, pattern: "[0-9]*" },
+    { type: 'input', controlName: 'suggestion', label: 'תיאור הרעיון' , required: true},
+  ];
 
-  constructor(private formBuilder: FormBuilder) {
-    this.userForm = this.formBuilder.group({
-      firstName: ['', Validators.required],
-      lastName: ['', Validators.required],
-      cellPhone: ['', [Validators.required, Validators.pattern("[0-9]*")]],
-      suggestion: ['', Validators.required],
-    });
+
+  constructor(private api: ApiService) {
   }
 
-  onSubmit() {
-    if (this.userForm.valid) {
-      // Handle form submission here
-      console.log(this.userForm.value);
-    }
+  submit(form: FormGroup) {
+    this.api.addForHelp(form.value);
   }
 }

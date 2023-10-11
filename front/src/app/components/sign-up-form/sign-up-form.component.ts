@@ -1,31 +1,44 @@
-import { Component } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ApiService } from 'src/app/services/api.service';
+import {Component} from '@angular/core';
+import {FormGroup} from '@angular/forms';
+import {ApiService} from 'src/app/services/api.service';
+import {FormField} from '../form/form.component';
+
 
 @Component({
   selector: 'app-sign-up-form',
   templateUrl: './sign-up-form.component.html',
-  styleUrls: ['./sign-up-form.component.scss']
+  styleUrls: ['./sign-up-form.component.scss'],
 })
-export class SignUpFormComponent {  userForm: FormGroup;
+export class SignUpFormComponent {
+  formFields: FormField[] = [
+    {type: 'input', controlName: 'firstName', label: 'שם פרטי', required: true},
+    {type: 'input', controlName: 'lastName', label: 'שם משפחה', required: true},
+    {type: 'input', controlName: 'cellPhone', label: 'טלפון', required: true, pattern: '[0-9]*'},
+    {
+      type: 'select', controlName: 'availability', label: 'זמינות', required: true, options: [
+        {value: 'full', label: 'מלאה'},
+        {value: 'partial', label: 'חלקית'},
+      ],
+    },
+    {
+      type: 'select', controlName: 'experience', label: 'שנות ניסיון', required: true, options: [
+        {value: '1-2', label: '1-2'},
+        {value: '2-4', label: '2-4'},
+        {value: '4-6', label: '4-6'},
+        {value: '6+', label: '6+'},
+      ],
+    },
+    {type: 'input', controlName: 'linkedin', label: 'פרופיל לינקדאין', required: true, pattern: 'https?://.+'},
+    {type: 'input', controlName: 'languages', label: 'ידע (שפות, טכנולוגיות וכו\')', required: true},
+    {type: 'input', controlName: 'moreInfo', label: 'מידע נוסף כללי'},
+  ];
 
-  constructor(private formBuilder: FormBuilder, private api: ApiService) {
-    this.userForm = this.formBuilder.group({
-      firstName: ['', Validators.required],
-      lastName: ['', Validators.required],
-      cellPhone: ['', [Validators.required, Validators.pattern("[0-9]*")]],
-      availability: ['', Validators.required],
-      experience: ['', Validators.required],
-      languages: ['', Validators.required],
-      linkedin: ['', [Validators.required, Validators.pattern(/^(https:\/\/www\.linkedin\.com\/)/)]],
-      moreInfo: ''
-    });
+
+  constructor(private api: ApiService) {
   }
 
-  onSubmit() {
-    if (this.userForm.valid) {
-      this.api.addHelper(this.userForm.value);
-    }
+  submit(form: FormGroup) {
+    this.api.addHelper(form.value);
   }
 
 }
