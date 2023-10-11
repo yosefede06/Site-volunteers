@@ -1,13 +1,4 @@
-
-<mat-tab-group [backgroundColor]="'accent'" style="padding-top: 3vh;" mat-stretch-tabs="true" mat-align-tabs="start">
-    <mat-tab label="רוצה לעזור">
-        <form [formGroup]="userForm" (ngSubmit)="onSubmit()" style="padding-left: 10vw; padding-right: 10vw;">
-            <mat-grid-list cols="4" rows="3" rowHeight="90px">
-                <mat-grid-tile>
-                    <mat-form-field color="accent" appearance="outline">
-                        <mat-label>שם פרטי</mat-label>
-                        <input matInput formControlName="firstName" required>
-                    </mat-form-field>
+<mat-toolbar><b>רוצה לעזור</b></mat-toolbar>
 
 <form [formGroup]="userForm" (ngSubmit)="onSubmit()" style="padding-left: 10vw; padding-right: 10vw;">
   <mat-grid-list cols="3" rows="3" rowHeight="90px">
