@@ -1,0 +1,52 @@
+.top {
+  display: flex;
+  height: 40vh;
+  direction: ltr;
+  width: 100vw;
+  background: #e9eeea;
+  gap: 3rem;
+  align-items: center;
+
+  img {
+    width: 40%;
+    object-fit: cover;
+    height: 100%;
+  }
+
+  .text {
+    padding: 2rem 0;
+    color: #2a5435;
+
+    h1, h2 {
+      margin: 0;
+      font-size: 60px;
+      font-weight: normal;
+    }
+
+    h2 {
+      font-weight: bold;
+    }
+  }
+}
+
+.info {
+  color: #444444;
+  padding: 2rem;
+  display: flex;
+  font-size: 2rem;
+  justify-content: center;
+  border-bottom: 1px solid #444444;
+
+  p {
+    max-width: 1000px;
+    text-align: center;
+  }
+
+}
+
+.buttons {
+  margin: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 10rem;
+}
