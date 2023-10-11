@@ -1,23 +1,32 @@
 
+.container {
+  height: 100%;
+  width: 100%;
+
+  div {
+    display: flex;
+    justify-content: center;
+  }
+
+}
 
 .info {
-  color: #444444;
-  padding: 2rem;
-  display: flex;
   font-size: 2rem;
-  justify-content: center;
   border-bottom: 1px solid #444444;
+  align-items: baseline;
+  gap: 1.5rem;
+  margin: 2rem 0;
+  padding: 2rem;
+  letter-spacing: 2.24px;
 
   p {
-    max-width: 1000px;
+    width: fit-content;
     text-align: center;
   }
 
 }
 
 .buttons {
-  margin: 2rem;
-  display: flex;
-  justify-content: center;
+  padding: 2rem;
   gap: 10rem;
 }
