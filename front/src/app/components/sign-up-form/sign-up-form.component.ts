@@ -7,8 +7,7 @@ import { ApiService } from 'src/app/services/api.service';
   templateUrl: './sign-up-form.component.html',
   styleUrls: ['./sign-up-form.component.scss']
 })
-export class SignUpFormComponent {
-  userForm: FormGroup;
+export class SignUpFormComponent {  userForm: FormGroup;
 
   constructor(private formBuilder: FormBuilder, private api: ApiService) {
     this.userForm = this.formBuilder.group({
@@ -25,7 +24,8 @@ export class SignUpFormComponent {
 
   onSubmit() {
     if (this.userForm.valid) {
-      this.api.add(this.userForm.value);
+      this.api.addHelper(this.userForm.value);
     }
   }
+
 }

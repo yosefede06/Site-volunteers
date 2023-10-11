@@ -1,0 +1,28 @@
+@import "src/assets/styles/variables.scss";
+
+mat-form-field {
+  border: none;
+  width: 100%;
+  padding: 5px;
+}
+
+
+form {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+button {
+  padding: .5rem 5rem;
+  width: fit-content;
+  align-self: flex-end;
+}
+
+
+mat-toolbar {
+  margin-top: 1rem;
+  border-bottom: 1px solid $dark;
+  letter-spacing: 2.24px;
+  padding: 2rem;
+}

@@ -12,8 +12,11 @@ export class ApiService {
 
   }
 
-  add(newUser: User) {
-    this.db.list('site-volunteer').push(newUser);
-  
+  addHelper(newUser: User) {
+    this.db.list('tohelp').push(newUser);
+  }
+
+  addForHelp(newUser: User) {
+    this.db.list('forhelp').push(newUser);
   }
 }
