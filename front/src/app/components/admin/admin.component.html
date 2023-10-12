@@ -1,1 +1,5 @@
-<p>admin works!</p>
+<div class="container mt-3">
+  <div class="row">
+    <app-helper-card *ngFor="let helper of (helpers$ | async)" [helper]="helper" class="col-4"></app-helper-card>
+  </div>
+</div>

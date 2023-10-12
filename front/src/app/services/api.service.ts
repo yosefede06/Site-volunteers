@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase } from '@angular/fire/compat/database';
+import {Observable} from 'rxjs';
 
-import { User } from '../user';
+import { Helper } from '../helper';
 
 @Injectable({
   providedIn: 'root'
@@ -12,15 +13,15 @@ export class ApiService {
 
   }
 
-  getHelpers() {
-    return this.db.list('tohelp').valueChanges();
+  getHelpers(): Observable<Helper[]> {
+    return this.db.list<Helper>('tohelp').valueChanges();
   }
 
-  addHelper(newUser: User) {
+  addHelper(newUser: Helper) {
     this.db.list('tohelp').push(newUser);
   }
 
-  addForHelp(newUser: User) {
+  addForHelp(newUser: Helper) {
     this.db.list('forhelp').push(newUser);
   }
 }

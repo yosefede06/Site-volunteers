@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
+import {Observable} from 'rxjs';
 import { ApiService } from 'src/app/services/api.service';
-import { User } from 'src/app/user';
+import { Helper } from 'src/app/helper';
 
 @Component({
   selector: 'app-admin',
@@ -9,12 +10,9 @@ import { User } from 'src/app/user';
 })
 export class AdminComponent {
 
-  private helpers: User[] = [];
+   helpers$: Observable<Helper[]>;
   constructor(private api: ApiService) {
-    api.getHelpers().subscribe((res: any) => {
-      this.helpers = res;
-      console.log(res);
-    })
+    this.helpers$ = api.getHelpers()
 
   }
 

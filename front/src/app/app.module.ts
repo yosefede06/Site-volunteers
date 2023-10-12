@@ -1,6 +1,7 @@
 import {NgOptimizedImage} from '@angular/common';
 import { NgModule } from '@angular/core';
 import { AngularFireModule } from '@angular/fire/compat';
+import {MatDividerModule} from '@angular/material/divider';
 import {MatIconModule} from '@angular/material/icon';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { BrowserModule } from '@angular/platform-browser';
@@ -24,6 +25,7 @@ import {MatTabsModule} from '@angular/material/tabs';
 import { SuggestionsFormComponent } from './components/suggestions-form/suggestions-form.component';
 import { FormComponent } from './components/form/form.component';
 import { AdminComponent } from './components/admin/admin.component';
+import { HelperCardComponent } from './components/helper-card/helper-card.component';
 
 
 const firebaseConfig = {
@@ -47,6 +49,7 @@ const firebaseConfig = {
     SuggestionsFormComponent,
     FormComponent,
     AdminComponent,
+    HelperCardComponent,
   ],
   imports: [
     BrowserModule,
@@ -67,6 +70,7 @@ const firebaseConfig = {
     MatIconModule,
     MatButtonModule,
     MatToolbarModule,
+    MatDividerModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

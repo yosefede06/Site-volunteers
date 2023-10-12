@@ -1,7 +1,7 @@
-export class User {
+export class Helper {
     firstName!: string;
     lastName!: string;
-    cellphone!: string;
+    cellPhone!: string;
     availability!: string;
     experience!: string;
     languages!: string;
