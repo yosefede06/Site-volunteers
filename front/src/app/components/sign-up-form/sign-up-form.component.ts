@@ -31,7 +31,7 @@ export class SignUpFormComponent {
     },
     {type: 'input', controlName: 'linkedin', label: 'פרופיל לינקדאין', required: true, pattern: 'https?://.+'},
     {type: 'input', controlName: 'languages', label: 'ידע (שפות, טכנולוגיות וכו\')', required: true},
-    {type: 'input', controlName: 'moreInfo', label: 'מידע נוסף כללי'},
+    {type: 'textarea', controlName: 'moreInfo', label: 'מידע נוסף כללי', colspan: 2},
   ];
 
 
