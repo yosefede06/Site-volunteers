@@ -16,5 +16,5 @@ export class Helper extends Person {
 }
 
 export class  Suggestion extends Person{
-    moreInfo!: string;
+    suggestion!: string;
 }
