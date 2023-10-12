@@ -46,6 +46,13 @@ export class ApiService {
 
   changeForHelpStatus(suggestion: Suggestion) {
     this.db.list('forhelp').update(suggestion.key, suggestion);
+  }
 
+  deleteHelper(helper: Helper) {
+    this.db.list('tohelp').remove(helper.key);
+  }
+
+  deleteForHelp(suggestion: Suggestion) {
+    this.db.list('forhelp').remove(suggestion.key);
   }
 }

@@ -5,6 +5,9 @@
         (change)="changeHelperStatus()"></mat-checkbox>
       {{helper.firstName}} {{helper.lastName}}</mat-card-title>
     <mat-card-subtitle>{{helper.cellPhone}}</mat-card-subtitle>
+    <button mat-mini-fab aria-label="Delete button" (click)="deleteHelper()">
+      <mat-icon>delete</mat-icon>
+    </button>
   </div>
   <mat-divider></mat-divider>
   <div class="row" *ngIf="helper.statusChange">

@@ -17,4 +17,10 @@ export class HelperCardComponent {
     this.api.changeHelperStatus(this.helper);
   }
 
+  deleteHelper() {
+    if (confirm("האם ברצונך לבצע מחיקה?")) {
+      this.api.deleteHelper(this.helper);
+    }
+  }
+
 }

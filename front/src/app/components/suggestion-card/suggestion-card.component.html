@@ -5,6 +5,9 @@
         (change)="changeForHelpStatus()"></mat-checkbox>
       {{suggestion.firstName}} {{suggestion.lastName}}</mat-card-title>
     <mat-card-subtitle>{{suggestion.cellPhone}}</mat-card-subtitle>
+    <button mat-mini-fab aria-label="Delete button" (click)="deleteForHelp()">
+      <mat-icon>delete</mat-icon>
+    </button>
   </div>
   <mat-divider></mat-divider>
   <div class="row" *ngIf="suggestion.statusChange">

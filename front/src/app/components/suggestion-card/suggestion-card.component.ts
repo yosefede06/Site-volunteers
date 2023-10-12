@@ -1,5 +1,5 @@
-import {Component, Input} from '@angular/core';
-import {Suggestion} from '../../helper';
+import { Component, Input } from '@angular/core';
+import { Suggestion } from '../../helper';
 import { ApiService } from 'src/app/services/api.service';
 
 @Component({
@@ -15,5 +15,11 @@ export class SuggestionCardComponent {
   changeForHelpStatus() {
     this.suggestion.statusChange = new Date().toLocaleString();
     this.api.changeForHelpStatus(this.suggestion);
+  }
+
+  deleteForHelp() {
+    if (confirm("האם ברצונך לבצע מחיקה?")) {
+      this.api.deleteForHelp(this.suggestion);
+    }
   }
 }
