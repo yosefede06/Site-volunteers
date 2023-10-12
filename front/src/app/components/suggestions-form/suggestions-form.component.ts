@@ -13,7 +13,7 @@ export class SuggestionsFormComponent {
     { type: 'input', controlName: 'firstName', label: 'שם פרטי', required: true },
     { type: 'input', controlName: 'lastName', label: 'שם משפחה', required: true },
     { type: 'input', controlName: 'cellPhone', label: 'טלפון', required: true, pattern: "[0-9]*" },
-    { type: 'input', controlName: 'suggestion', label: 'תיאור הרעיון' , required: true},
+    { type: 'textarea', controlName: 'suggestion', label: 'תיאור הרעיון' , required: true, colspan: 3},
   ];
 
 
