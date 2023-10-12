@@ -1,18 +1,13 @@
 <mat-card class="m-2">
-  <div class="d-flex align-items-center justify-content-between  p-2">
-    <mat-card-title class="title">
-      <mat-checkbox [checked]="suggestion.active" [(ngModel)]="suggestion.active"
-        (change)="changeForHelpStatus()"></mat-checkbox>
+  <div class="d-flex align-items-center justify-content-between  p-1 px-2">
+    <mat-card-title class="title d-flex align-items-center">
       {{suggestion.firstName}} {{suggestion.lastName}}</mat-card-title>
     <mat-card-subtitle>{{suggestion.cellPhone}}</mat-card-subtitle>
-    <button mat-mini-fab aria-label="Delete button" (click)="deleteForHelp()">
-      <mat-icon>delete</mat-icon>
-    </button>
-  </div>
-  <mat-divider></mat-divider>
-  <div class="row" *ngIf="suggestion.statusChange">
-    <b class="col-5">שינוי סטטוס אחרון</b>
-    <p class="col">{{suggestion.statusChange}}</p>
+    <mat-card-actions align="end" class="p-0">
+      <mat-icon (click)="deleteForHelp()">delete</mat-icon>
+      <mat-checkbox [checked]="suggestion.active" [(ngModel)]="suggestion.active"
+                    (change)="changeForHelpStatus()"></mat-checkbox>
+      </mat-card-actions>
   </div>
 
   <mat-divider></mat-divider>
@@ -22,4 +17,9 @@
       <p class="col">{{suggestion.suggestion}}</p>
     </div>
   </mat-card-content>
+  <mat-card-footer>
+    <div *ngIf="suggestion.statusChange" [align]="'end'" class="px-2 mb-2">
+      <small>שינוי אחרון {{suggestion.statusChange | date }}</small>
+    </div>
+  </mat-card-footer>
 </mat-card>
