@@ -12,6 +12,10 @@ export class ApiService {
 
   }
 
+  getHelpers() {
+    return this.db.list('tohelp').valueChanges();
+  }
+
   addHelper(newUser: User) {
     this.db.list('tohelp').push(newUser);
   }
