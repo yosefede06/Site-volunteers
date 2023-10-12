@@ -1,22 +1,20 @@
-<form [formGroup]="form" (ngSubmit)="submit()" style="padding: 0 10vw;">
-  <mat-grid-list cols="3" rows="3" rowHeight="120px">
-    <ng-container *ngFor="let field of formFields">
-      <mat-grid-tile [colspan]="field.colspan || 1">
-        <mat-form-field appearance="outline">
-          <mat-label>{{ field.label }}</mat-label>
-          <ng-container [ngSwitch]="field.type">
-            <input *ngSwitchCase="'input'" matInput [formControlName]="field.controlName"
-              [required]="field.required || false" [pattern]="field.pattern || ''">
-            <mat-select *ngSwitchCase="'select'" formControlName="{{ field.controlName }}"
-              [required]="field?.required || false">
-              <mat-option *ngFor="let option of field.options" [value]="option.value">{{ option.label }}</mat-option>
-            </mat-select>
-            <textarea *ngSwitchCase="'textarea'" matInput [formControlName]="field.controlName"
-              [required]="field.required || false" [pattern]="field.pattern || ''"></textarea>
-          </ng-container>
-        </mat-form-field>
-      </mat-grid-tile>
-    </ng-container>
-  </mat-grid-list>
+<form [formGroup]="form" (ngSubmit)="submit()" class="container">
+  <div class="row">
+    <div [class]="field.col || 'col-sm-4 col-12'" *ngFor="let field of formFields">
+      <mat-form-field appearance="outline">
+        <mat-label>{{ field.label }}</mat-label>
+        <ng-container [ngSwitch]="field.type">
+          <input *ngSwitchCase="'input'" matInput [formControlName]="field.controlName"
+                 [required]="field.required || false" [pattern]="field.pattern || ''">
+          <mat-select *ngSwitchCase="'select'" formControlName="{{ field.controlName }}"
+                      [required]="field?.required || false">
+            <mat-option *ngFor="let option of field.options" [value]="option.value">{{ option.label }}</mat-option>
+          </mat-select>
+          <textarea *ngSwitchCase="'textarea'" matInput [formControlName]="field.controlName"
+                    [required]="field.required || false" [pattern]="field.pattern || ''"></textarea>
+        </ng-container>
+      </mat-form-field>
+    </div>
+  </div>
   <button type="submit" [disabled]="form.invalid" [class.disabled]="form.invalid">שלח</button>
 </form>

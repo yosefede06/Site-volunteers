@@ -9,7 +9,7 @@ export interface FormField {
   color?: string;
   pattern?: string;
   options?: {value: string, label: string}[];
-  colspan?: number;
+  col?: string;
 }
 
 @Component({
