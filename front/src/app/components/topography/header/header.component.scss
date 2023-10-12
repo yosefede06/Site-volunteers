@@ -28,3 +28,10 @@
     }
   }
 }
+
+@media only screen and (max-width: 600px) {
+  .header {
+    height: 10vh;
+    gap: 1rem;
+  }
+}

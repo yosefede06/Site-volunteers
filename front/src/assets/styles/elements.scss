@@ -26,6 +26,12 @@ button {
     opacity: 90%
   }
 
+  &.disabled {
+    opacity: 50%;
+    cursor: default;
+  }
+
+
 }
 
 .title {
@@ -38,7 +44,6 @@ button {
 
 p {
   font-family: "Almoni regular", sans-serif;
-  font-size: 32px;
   font-style: normal;
   line-height: normal;
   letter-spacing: 2.24px;
@@ -47,4 +52,29 @@ p {
 
 b {
   font-family: "Almoni bold", sans-serif;
+}
+
+@media only screen and (max-width: 600px) {
+
+  .title {
+    font-size: 1.2rem;
+  }
+
+
+  button {
+    border-radius: 10px;
+    background: $dark;
+    color: $white;
+    font-size: 1.2rem;
+    letter-spacing: 2.24px;
+    font-family: "Almoni regular", sans-serif;
+    border: none;
+    padding: .5rem 1rem;
+
+
+  }
+}
+
+.container {
+  padding: 0;
 }

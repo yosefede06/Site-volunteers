@@ -1,15 +1,4 @@
 
-.container {
-  height: 100%;
-  width: 100%;
-
-  div {
-    display: flex;
-    justify-content: center;
-  }
-
-}
-
 .info {
   font-size: 2rem;
   border-bottom: 1px solid #444444;
@@ -29,4 +18,27 @@
 .buttons {
   padding: 2rem;
   gap: 10rem;
+}
+
+
+
+@media only screen and (max-width: 600px) {
+
+  .info {
+    font-size: 1.5rem;
+    margin: 1rem 0;
+
+
+    mat-icon {
+      display: none;
+    }
+  }
+
+  .buttons {
+    margin-top: 3rem;
+    padding: 0  1rem;
+    gap: 2rem;
+    flex-direction: column;
+  }
+
 }
