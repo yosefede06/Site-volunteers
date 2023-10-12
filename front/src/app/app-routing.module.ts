@@ -3,6 +3,7 @@ import {RouterModule, Routes} from '@angular/router';
 import {adminGuard} from './admin.guard';
 import {LandingPageComponent} from './components/landing-page/landing-page.component';
 import {SignUpFormComponent} from './components/sign-up-form/sign-up-form.component';
+import {SuccessComponent} from './components/success/success.component';
 import {SuggestionsFormComponent} from './components/suggestions-form/suggestions-form.component';
 import { AdminComponent } from './components/admin/admin.component';
 
@@ -11,6 +12,7 @@ const routes: Routes = [
   {path: 'home', component: LandingPageComponent},
   {path: 'signup', component: SignUpFormComponent},
   {path: 'suggest', component: SuggestionsFormComponent},
+  {path: 'success', component: SuccessComponent},
   {path: 'admin', component: AdminComponent, canActivate: [adminGuard]}
 ];
 
