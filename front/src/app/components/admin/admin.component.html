@@ -1,5 +1,25 @@
-<div class="container mt-3">
-  <div class="row">
-    <app-helper-card *ngFor="let helper of (helpers$ | async)" [helper]="helper" class="col-4"></app-helper-card>
-  </div>
-</div>
+<!--<div class="container mt-3">-->
+<!--  <div class="row">-->
+<!--    <app-helper-card *ngFor="let helper of (helpers$ | async)" [helper]="helper" class="col-4"></app-helper-card>-->
+<!--  </div>-->
+<!--  <div class="row">-->
+<!--    <app-suggestion-card *ngFor="let suggestion of (suggestions$ | async)" [suggestion]="suggestion"-->
+<!--                         class="col-4"></app-suggestion-card>-->
+<!--  </div>-->
+<!--</div>-->
+
+
+<mat-tab-group class="container mt-3 px-3">
+  <mat-tab label="מתנדבים">
+    <div class="row mt-2">
+      <app-helper-card *ngFor="let helper of (helpers$ | async)" [helper]="helper" class="col-4"></app-helper-card>
+    </div>
+  </mat-tab>
+  <mat-tab label="הצעות">
+    <div class="row mt-2">
+      <app-suggestion-card *ngFor="let suggestion of (suggestions$ | async)" [suggestion]="suggestion"
+                           class="col-4"></app-suggestion-card>
+    </div>
+  </mat-tab>
+
+</mat-tab-group>

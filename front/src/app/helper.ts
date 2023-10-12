@@ -8,3 +8,10 @@ export class Helper {
     linkedin!: string;
     moreInfo!: string;
 }
+
+export class  Suggestion{
+    firstName!: string;
+    lastName!: string;
+    cellPhone!: string;
+    moreInfo!: string;
+}
