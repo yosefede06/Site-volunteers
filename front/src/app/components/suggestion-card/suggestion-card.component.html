@@ -1,6 +1,9 @@
 <mat-card class="m-2">
   <div class="d-flex align-items-center justify-content-between  p-2">
-    <mat-card-title class="title">{{suggestion.firstName}} {{suggestion.lastName}}</mat-card-title>
+    <mat-card-title class="title">
+      <mat-checkbox [checked]="suggestion.active"></mat-checkbox>
+
+      {{suggestion.firstName}} {{suggestion.lastName}}</mat-card-title>
     <mat-card-subtitle>{{suggestion.cellPhone}}</mat-card-subtitle>
   </div>
   <mat-divider></mat-divider>
@@ -11,4 +14,3 @@
     </div>
   </mat-card-content>
 </mat-card>
-

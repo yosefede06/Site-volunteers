@@ -1,7 +1,12 @@
-export class Helper {
+class Person {
     firstName!: string;
     lastName!: string;
     cellPhone!: string;
+    active!: boolean;
+    statusChange!: string;
+}
+
+export class Helper extends Person {
     availability!: string;
     experience!: string;
     languages!: string;
@@ -9,9 +14,6 @@ export class Helper {
     moreInfo!: string;
 }
 
-export class  Suggestion{
-    firstName!: string;
-    lastName!: string;
-    cellPhone!: string;
+export class  Suggestion extends Person{
     moreInfo!: string;
 }

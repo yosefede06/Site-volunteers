@@ -13,6 +13,9 @@ export class ApiService {
 
   }
 
+  getBasic() {
+    return this.db.list<Suggestion>('forhelp').valueChanges();
+  }
   getSuggestions():  Observable<Suggestion[]>  {
     return this.db.list<Suggestion>('forhelp').valueChanges();
   }
@@ -27,5 +30,13 @@ export class ApiService {
 
   addForHelp(suggestion: Suggestion) {
     this.db.list('forhelp').push(suggestion);
+  }
+
+  changeHelperStatus(helper: Helper) {
+
+  }
+
+  changeForHelpStatus(suggestion: Suggestion){
+
   }
 }
