@@ -3,6 +3,7 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Router} from '@angular/router';
 import {ApiService} from '../../services/api.service';
 import {FormField} from '../form/form.component';
+import { Suggestion } from 'src/app/helper';
 
 @Component({
   selector: 'app-suggestions-form',
@@ -22,7 +23,10 @@ export class SuggestionsFormComponent {
   }
 
   submit(form: FormGroup) {
-    this.api.addForHelp(form.value);
+    let temp = form.value as Suggestion;
+    temp.active = false;
+    temp.statusChange = new Date().toLocaleString();
+    this.api.addForHelp(temp);
     this.router.navigateByUrl('success')
   }
 }

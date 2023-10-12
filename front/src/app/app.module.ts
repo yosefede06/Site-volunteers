@@ -1,9 +1,9 @@
-import {NgOptimizedImage} from '@angular/common';
+import { NgOptimizedImage } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { AngularFireModule } from '@angular/fire/compat';
-import {MatDividerModule} from '@angular/material/divider';
-import {MatIconModule} from '@angular/material/icon';
-import {MatToolbarModule} from '@angular/material/toolbar';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatIconModule } from '@angular/material/icon';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -21,7 +21,8 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatCardModule } from '@angular/material/card';
 import { MatGridListModule } from '@angular/material/grid-list';
-import {MatTabsModule} from '@angular/material/tabs';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatCheckboxModule } from '@angular/material/checkbox';
 import { SuggestionsFormComponent } from './components/suggestions-form/suggestions-form.component';
 import { FormComponent } from './components/form/form.component';
 import { AdminComponent } from './components/admin/admin.component';
@@ -64,6 +65,7 @@ const firebaseConfig = {
     MatFormFieldModule,
     MatInputModule,
     MatSelectModule,
+    MatCheckboxModule,
     MatCardModule,
     MatGridListModule,
     FormsModule,

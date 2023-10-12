@@ -3,6 +3,7 @@ import {FormGroup} from '@angular/forms';
 import {Router} from '@angular/router';
 import {ApiService} from 'src/app/services/api.service';
 import {FormField} from '../form/form.component';
+import { Helper } from 'src/app/helper';
 
 
 @Component({
@@ -39,7 +40,10 @@ export class SignUpFormComponent {
   }
 
   submit(form: FormGroup) {
-    this.api.addHelper(form.value);
+    let temp = form.value as Helper;
+    temp.active = false;
+    temp.statusChange = new Date().toLocaleString();
+    this.api.addHelper(temp);
     this.router.navigateByUrl('success')
   }
 

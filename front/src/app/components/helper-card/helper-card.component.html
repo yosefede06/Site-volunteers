@@ -1,6 +1,8 @@
 <mat-card class="m-2">
   <div class="d-flex align-items-center justify-content-between  p-2">
-    <mat-card-title class="title">{{helper.firstName}} {{helper.lastName}}</mat-card-title>
+    <mat-card-title class="title">
+      <mat-checkbox [checked]="helper.active"></mat-checkbox>
+      {{helper.firstName}} {{helper.lastName}}</mat-card-title>
     <mat-card-subtitle>{{helper.cellPhone}}</mat-card-subtitle>
   </div>
   <mat-divider></mat-divider>
