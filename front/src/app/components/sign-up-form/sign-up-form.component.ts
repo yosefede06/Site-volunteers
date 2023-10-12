@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {FormGroup} from '@angular/forms';
+import {Router} from '@angular/router';
 import {ApiService} from 'src/app/services/api.service';
 import {FormField} from '../form/form.component';
 
@@ -34,11 +35,12 @@ export class SignUpFormComponent {
   ];
 
 
-  constructor(private api: ApiService) {
+  constructor(private api: ApiService, private router: Router) {
   }
 
   submit(form: FormGroup) {
     this.api.addHelper(form.value);
+    this.router.navigateByUrl('success')
   }
 
 }

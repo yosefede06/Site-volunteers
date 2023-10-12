@@ -27,6 +27,7 @@ import { FormComponent } from './components/form/form.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { HelperCardComponent } from './components/helper-card/helper-card.component';
 import { SuggestionCardComponent } from './components/suggestion-card/suggestion-card.component';
+import { SuccessComponent } from './components/success/success.component';
 
 
 const firebaseConfig = {
@@ -52,6 +53,7 @@ const firebaseConfig = {
     AdminComponent,
     HelperCardComponent,
     SuggestionCardComponent,
+    SuccessComponent,
   ],
   imports: [
     BrowserModule,
