@@ -8,9 +8,7 @@ import { Helper, Suggestion } from '../helper';
 })
 export class ApiService {
 
-  constructor(private db: AngularFireDatabase) {
-
-  }
+  constructor(private db: AngularFireDatabase) {}
 
   getSuggestions(): Observable<Suggestion[]> {
     return this.db.list<Suggestion>('forhelp').snapshotChanges()
