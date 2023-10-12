@@ -1,5 +1,6 @@
 import {Component, Input} from '@angular/core';
-import {Helper, Suggestion} from '../../helper';
+import {Suggestion} from '../../helper';
+import { ApiService } from 'src/app/services/api.service';
 
 @Component({
   selector: 'app-suggestion-card',
@@ -8,4 +9,11 @@ import {Helper, Suggestion} from '../../helper';
 })
 export class SuggestionCardComponent {
   @Input() suggestion: Suggestion = new Suggestion();
+
+  constructor(private api: ApiService) { }
+
+  changeForHelpStatus() {
+    this.suggestion.statusChange = new Date().toLocaleString();
+    this.api.changeForHelpStatus(this.suggestion);
+  }
 }

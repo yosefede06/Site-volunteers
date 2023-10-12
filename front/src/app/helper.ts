@@ -1,4 +1,5 @@
 class Person {
+    key!: string;
     firstName!: string;
     lastName!: string;
     cellPhone!: string;

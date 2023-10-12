@@ -1,5 +1,6 @@
-import {Component, Input} from '@angular/core';
-import {Helper} from '../../helper';
+import { Component, Input } from '@angular/core';
+import { Helper } from '../../helper';
+import { ApiService } from 'src/app/services/api.service';
 
 @Component({
   selector: 'app-helper-card',
@@ -8,4 +9,12 @@ import {Helper} from '../../helper';
 })
 export class HelperCardComponent {
   @Input() helper: Helper = new Helper();
+
+  constructor(private api: ApiService) { }
+
+  changeHelperStatus() {
+    this.helper.statusChange = new Date().toLocaleString();
+    this.api.changeHelperStatus(this.helper);
+  }
+
 }

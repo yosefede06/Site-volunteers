@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase } from '@angular/fire/compat/database';
-import {Observable} from 'rxjs';
-
-import {Helper, Suggestion} from '../helper';
+import { Observable, map, tap } from 'rxjs';
+import { Helper, Suggestion } from '../helper';
 
 @Injectable({
   providedIn: 'root'
@@ -13,15 +12,24 @@ export class ApiService {
 
   }
 
-  getBasic() {
-    return this.db.list<Suggestion>('forhelp').valueChanges();
-  }
-  getSuggestions():  Observable<Suggestion[]>  {
-    return this.db.list<Suggestion>('forhelp').valueChanges();
+  getSuggestions(): Observable<Suggestion[]> {
+    return this.db.list<Suggestion>('forhelp').snapshotChanges()
+      .pipe(
+        map((changes: any) => changes.map(
+          (c: any) => ({ key: c.payload.key, ...c.payload.val() })
+        ))
+        , tap((next) => { }
+        ));
   }
 
   getHelpers(): Observable<Helper[]> {
-    return this.db.list<Helper>('tohelp').valueChanges();
+    return this.db.list<Helper>('tohelp').snapshotChanges()
+      .pipe(
+        map((changes: any) => changes.map(
+          (c: any) => ({ key: c.payload.key, ...c.payload.val() })
+        ))
+        , tap((next) => { }
+        ));
   }
 
   addHelper(newUser: Helper) {
@@ -33,10 +41,11 @@ export class ApiService {
   }
 
   changeHelperStatus(helper: Helper) {
-
+    this.db.list('tohelp').update(helper.key, helper);
   }
 
-  changeForHelpStatus(suggestion: Suggestion){
+  changeForHelpStatus(suggestion: Suggestion) {
+    this.db.list('forhelp').update(suggestion.key, suggestion);
 
   }
 }

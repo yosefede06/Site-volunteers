@@ -1,11 +1,17 @@
 <mat-card class="m-2">
   <div class="d-flex align-items-center justify-content-between  p-2">
     <mat-card-title class="title">
-      <mat-checkbox [checked]="suggestion.active"></mat-checkbox>
-
+      <mat-checkbox [checked]="suggestion.active" [(ngModel)]="suggestion.active"
+        (change)="changeForHelpStatus()"></mat-checkbox>
       {{suggestion.firstName}} {{suggestion.lastName}}</mat-card-title>
     <mat-card-subtitle>{{suggestion.cellPhone}}</mat-card-subtitle>
   </div>
+  <mat-divider></mat-divider>
+  <div class="row" *ngIf="suggestion.statusChange">
+    <b class="col-5">שינוי סטטוס אחרון</b>
+    <p class="col">{{suggestion.statusChange}}</p>
+  </div>
+
   <mat-divider></mat-divider>
   <mat-card-content class="info">
 

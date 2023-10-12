@@ -1,9 +1,15 @@
 <mat-card class="m-2">
   <div class="d-flex align-items-center justify-content-between  p-2">
     <mat-card-title class="title">
-      <mat-checkbox [checked]="helper.active"></mat-checkbox>
+      <mat-checkbox [checked]="helper.active" [(ngModel)]="helper.active"
+        (change)="changeHelperStatus()"></mat-checkbox>
       {{helper.firstName}} {{helper.lastName}}</mat-card-title>
     <mat-card-subtitle>{{helper.cellPhone}}</mat-card-subtitle>
+  </div>
+  <mat-divider></mat-divider>
+  <div class="row" *ngIf="helper.statusChange">
+    <b class="col-5">שינוי סטטוס אחרון</b>
+    <p class="col">{{helper.statusChange}}</p>
   </div>
   <mat-divider></mat-divider>
   <mat-card-content class="info">
@@ -25,10 +31,9 @@
       <a class="col" [href]="helper.linkedin">{{helper.linkedin}}</a>
     </div>
     <div class="row mt-2" *ngIf="helper.moreInfo">
-    <mat-divider class=" m-2"></mat-divider>
+      <mat-divider class=" m-2"></mat-divider>
       <b class="col-3">מידע נוסף</b>
       <p class="col">{{helper.moreInfo}}</p>
     </div>
   </mat-card-content>
 </mat-card>
-
