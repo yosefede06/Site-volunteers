@@ -2,14 +2,14 @@
   <div class="info d-flex justify-content-center">
     <mat-icon>info</mat-icon>
     <p>
-      כאן נרכז ונחבר בין כל מתנדב שרוצה לעזור לבין כל צורך שייעלה, תצטרכו למלא טופס קצר שבו תציגו <br>את מה שבידיעתכם
-      לתרום או
-      טופס שבו תציגו את הצורך שלכם, אנחנו כבר נדאג לעשות את השאר.
-      <br><br><b>תודה על ההירתמות!</b>
+      {{ 'info' | transloco }}
+      <br>
+      <br>
+      <b>{{ 'info-thanks' | transloco }}</b>
     </p>
   </div>
   <div class="buttons d-flex justify-content-center">
-    <button routerLink="/signup">רוצה לעזור</button>
-    <button routerLink="/suggest">צריך עזרה</button>
+    <button routerLink="/signup">{{ 'helper.title' | transloco }}</button>
+    <button routerLink="/suggest">{{ 'need-help.title' | transloco }} </button>
   </div>
 </div>
