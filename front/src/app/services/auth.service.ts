@@ -1,6 +1,6 @@
-import {Injectable} from '@angular/core';
-import {AngularFireAuth} from '@angular/fire/compat/auth';
-import {Observable, Subject} from 'rxjs';
+import { Injectable } from '@angular/core';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { Observable, Subject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -11,10 +11,17 @@ export class AuthService {
 
   AuthState: Subject<boolean> = new Subject<boolean>();
 
-  constructor(private afAuth: AngularFireAuth) { this.AuthState.next(false);}
+  constructor(private afAuth: AngularFireAuth) {
+    // Set the persistence to 'session' so the authentication state persists during the session.
+    this.afAuth.setPersistence('session');
+    this.afAuth.onAuthStateChanged(user => {
+      // Check if a user is logged in or not
+      this.AuthState.next(!!user);
+    });
+  }
 
-  get authState() : Observable<boolean>{
-    return this.AuthState
+  get authState(): Observable<boolean> {
+    return this.AuthState.asObservable();
   }
 
   async login(email: string, password: string) {
@@ -23,6 +30,15 @@ export class AuthService {
       this.AuthState.next(true);
     } catch (error) {
       this.AuthState.next(false);
+    }
+  }
+
+  async logout() {
+    try {
+      await this.afAuth.signOut();
+      this.AuthState.next(false);
+    } catch (error) {
+      console.error('Error logging out:', error);
     }
   }
 }
