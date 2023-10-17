@@ -47,10 +47,12 @@ p {
   font-style: normal;
   line-height: normal;
   letter-spacing: 2.24px;
+  line-break: anywhere;
 }
 
 
 b {
+  line-break: anywhere;
   font-family: "Almoni bold", sans-serif;
 }
 
