@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { Router } from '@angular/router';
 import { Observable, Subject } from 'rxjs';
 
 @Injectable({
@@ -11,7 +12,7 @@ export class AuthService {
 
   AuthState: Subject<boolean> = new Subject<boolean>();
 
-  constructor(private afAuth: AngularFireAuth) {
+  constructor(private afAuth: AngularFireAuth, private router: Router) {
     // Set the persistence to 'session' so the authentication state persists during the session.
     this.afAuth.setPersistence('session');
     this.afAuth.onAuthStateChanged(user => {
@@ -37,6 +38,7 @@ export class AuthService {
     try {
       await this.afAuth.signOut();
       this.AuthState.next(false);
+      this.router.navigateByUrl('login');
     } catch (error) {
       console.error('Error logging out:', error);
     }
