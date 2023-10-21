@@ -1,7 +1,0 @@
-<div>
-    <button mat-fab *ngFor="let language of languagesList; index as i" (click)="changeLanguage(language.code)"
-        class="flex flex-col items-center mx-5">
-        <img [src]="language.imgUrl" [alt]="language.name" />
-        <span class="text-xs mt-1"> {{ language.shorthand }} </span>
-    </button>
-</div>

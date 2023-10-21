@@ -30,10 +30,6 @@ import { HelperCardComponent } from './components/helper-card/helper-card.compon
 import { SuggestionCardComponent } from './components/suggestion-card/suggestion-card.component';
 import { SuccessComponent } from './components/success/success.component';
 import { LoginAdminComponent } from './components/login-admin/login-admin.component';
-import { HttpClientModule } from '@angular/common/http';
-import { TranslocoRootModule } from './transloco-root.module';
-import { LanguageSelectorComponent } from './components/topography/language-selector/language-selector.component';
-
 
 const firebaseConfig = {
   apiKey: "AIzaSyCy9gohxz_giHiIKSsrqrSXcrr9xxH1blk",
@@ -59,8 +55,7 @@ const firebaseConfig = {
     HelperCardComponent,
     SuggestionCardComponent,
     SuccessComponent,
-    LoginAdminComponent,
-    LanguageSelectorComponent,
+    LoginAdminComponent
   ],
   imports: [
     BrowserModule,
@@ -83,8 +78,6 @@ const firebaseConfig = {
     MatButtonModule,
     MatToolbarModule,
     MatDividerModule,
-    HttpClientModule,
-    TranslocoRootModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
