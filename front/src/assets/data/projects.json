@@ -1,0 +1,43 @@
+[
+  {
+    "Name": "Calm Corner",
+    "Description": "A relaxation website for people dealing with anxiety or sheltering during crises",
+    "Link": "Calm Corner",
+    "img": "calmCorner.png"
+  },
+  {
+    "Name": "Telegram News Translator Bot",
+    "Description": "Translates news from Palestinian news channels into Hebrew to combat fake news and promote understanding",
+    "Link": "https://t.me/translated_news_in_hebrew"
+  },
+  {
+    "Name": "Call for Help",
+    "Description": "Connects helpers and those in need of emotional support, especially during national distress",
+    "Link": "Call for Help"
+  },
+  {
+    "Name": "GuardSched",
+    "Description": "Helps towns and communities coordinate guard duty to ensure security",
+    "Link": "GuardSched"
+  },
+  {
+    "Name": "Defender Bot",
+    "Description": "A WhatsApp group security bot that identifies and removes suspicious participants",
+    "Link": "Not provided, but it's a WhatsApp bot"
+  },
+  {
+    "Name": "Safe Route",
+    "Description": "A wartime map showing hazards and helping users plan safe routes during conflicts",
+    "Link": "Safe Route"
+  },
+  {
+    "Name": "Pro-Israel Content Webpage",
+    "Description": "Gathers pro-Israel content to support Israel and fight misinformation",
+    "Link": "Pro-Israel Content"
+  },
+  {
+    "Name": "HomeHelp",
+    "Description": "Helps citizens choose safer homes near the border during times of danger",
+    "Link": "HomeHelp"
+  }
+]

@@ -1,4 +1,5 @@
 import { NgOptimizedImage } from '@angular/common';
+import {HttpClientModule} from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { AngularFireModule } from '@angular/fire/compat';
 import { MatDividerModule } from '@angular/material/divider';
@@ -30,6 +31,7 @@ import { HelperCardComponent } from './components/helper-card/helper-card.compon
 import { SuggestionCardComponent } from './components/suggestion-card/suggestion-card.component';
 import { SuccessComponent } from './components/success/success.component';
 import { LoginAdminComponent } from './components/login-admin/login-admin.component';
+import { ProjectCardComponent } from './components/project-card/project-card.component';
 
 const firebaseConfig = {
   apiKey: "AIzaSyCy9gohxz_giHiIKSsrqrSXcrr9xxH1blk",
@@ -55,7 +57,8 @@ const firebaseConfig = {
     HelperCardComponent,
     SuggestionCardComponent,
     SuccessComponent,
-    LoginAdminComponent
+    LoginAdminComponent,
+    ProjectCardComponent
   ],
   imports: [
     BrowserModule,
@@ -78,6 +81,7 @@ const firebaseConfig = {
     MatButtonModule,
     MatToolbarModule,
     MatDividerModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

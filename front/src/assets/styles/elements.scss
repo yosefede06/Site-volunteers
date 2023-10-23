@@ -12,13 +12,13 @@ body {
 
 
 button {
-  border-radius: 10px;
+  border-radius: 70px;
   background: $dark;
   color: $white;
   font-size: 1.5rem;
   letter-spacing: 2.24px;
   font-family: "Almoni regular", sans-serif;
-  border: none;
+  border: 3px solid $dark;
   padding: 1rem 4rem;
   cursor: pointer;
 
@@ -31,7 +31,10 @@ button {
     cursor: default;
   }
 
-
+  &.secondary-button {
+    background: transparent;
+    color: $dark;
+  }
 }
 
 .title {
@@ -64,14 +67,12 @@ b {
 
 
   button {
-    border-radius: 10px;
     background: $dark;
     color: $white;
     font-size: 1.2rem;
     letter-spacing: 2.24px;
     font-family: "Almoni regular", sans-serif;
-    border: none;
-    padding: .5rem 1rem;
+    padding: .7rem 1rem;
 
 
   }

@@ -1,0 +1,9 @@
+
+<mat-card *ngIf="project" dir="ltr" (click)="location.href=project.Link" class="card">
+  <img mat-card-image [src]="'assets/images/projects/' + (project.img || 'default.png')">
+  <div class="p-4">
+  <mat-card-title class="title">{{project.Name}}</mat-card-title>
+  <mat-card-subtitle class="subtitle">{{project.Description}}</mat-card-subtitle>
+  </div>
+</mat-card>
+
